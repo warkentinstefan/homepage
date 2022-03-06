@@ -4,9 +4,14 @@
 
 .u-section-1 .u-custom-html-1 {
   margin-bottom: 0;
-  height: auto;
   min-height: 500px;
   margin-top: 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-custom-html-1 {
+    height: auto;
+  }
 }#ft-form {
   font-family: inherit;
   font-size: 100%;
@@ -86,6 +91,7 @@
 }
 #ft-form [type=date],
 #ft-form [type=email],
+#ft-form [type=subject],
 #ft-form [type=tel],
 #ft-form [type=text],
 #ft-form select,
@@ -106,6 +112,7 @@
 }
 #ft-form [type=date]:focus,
 #ft-form [type=email]:focus,
+#ft-form [type=subject]:focus,
 #ft-form [type=tel]:focus,
 #ft-form [type=text]:focus,
 #ft-form select:focus,
@@ -314,6 +321,7 @@
 #ft-form [type=date],
 #ft-form [type=datetime-local],
 #ft-form [type=email],
+#ft-form [type=subject],
 #ft-form [type=file],
 #ft-form [type=month],
 #ft-form [type=number],
@@ -336,6 +344,7 @@
 #ft-form [type=date] select,
 #ft-form [type=datetime-local] select,
 #ft-form [type=email] select,
+#ft-form [type=subject] select,
 #ft-form [type=file] select,
 #ft-form [type=month] select,
 #ft-form [type=number] select,
@@ -354,6 +363,7 @@
 #ft-form [type=date]:focus,
 #ft-form [type=datetime-local]:focus,
 #ft-form [type=email]:focus,
+#ft-form [type=subject]:focus,
 #ft-form [type=file]:focus,
 #ft-form [type=month]:focus,
 #ft-form [type=number]:focus,

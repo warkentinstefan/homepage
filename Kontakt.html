@@ -71,6 +71,8 @@
               </label>
               <label> E-Mail-Adresse <input type="email" name="E-Mail" required="">
               </label>
+              <label> Betreff <input type="subject" name="Betreff" required="">
+              </label>
               <label> Ihre Nachricht <textarea rows="3" name="Nachricht" required=""></textarea>
               </label>
               <div>
@@ -83,6 +85,7 @@
               <input type="text" name="_gotcha" value="" style="display:none;">
               <input type="submit" value="Absenden">
             </div>
+            <input type="hidden" value="" name="recaptchaResponse">
           </form>
         </div>
       </div>
