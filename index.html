@@ -11,6 +11,48 @@
 <link rel="stylesheet" href="Dienstleistungen.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <script> 'use strict';
+document.addEventListener('DOMContentLoaded', function () {
+	const stage = document.querySelector('#stage'),
+		toggleButton = document.querySelector('#stage button');
+	stage.addEventListener('click', toggler);
+	function toggler(event) {
+		console.log("toggler", window.matchMedia('(display-mode: fullscreen)')
+			.matches);
+		if (window.matchMedia('(display-mode: fullscreen)')
+			.matches) {
+			console.log('exit');
+			exitFullscreen();
+		} else {
+			console.log('enter');
+			enterFullscreen(stage);
+		}
+	}
+	stage.addEventListener("fullscreenchange", updateButton);
+	function updateButton(event) {
+		console.log("fullscreenchange");
+		toggleButton.classList.toggle('fullscreen');
+		toggleButton.textContent = (toggleButton.textContent == 'Vollbildmodus ⛶') ?
+			'Vollbildmodus verlassen X' : 'Vollbildmodus ⛶';
+	}
+});
+function enterFullscreen(element) {
+	if (element.requestFullscreen) {
+		element.requestFullscreen();
+	} else if (element.webkitRequestFullscreen) {
+		element.webkitRequestFullscreen();
+	} else if (element.msRequestFullscreen) { // for IE11 (remove June 2022)
+		element.msRequestFullscreen();
+	}
+}
+function exitFullscreen() {
+	console.log('exit');
+	if (document.exitFullscreen) {
+		document.exitFullscreen();
+	} else if (document.webkitExitFullscreen) {
+		document.webkitExitFullscreen();
+	}
+} </script>
     
     <link rel="icon" href="images/favicon.jpeg">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -168,7 +210,7 @@
               <div class="u-layout-row">
                 <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
                   <div class="u-container-layout u-valign-top u-container-layout-1">
-                    <img class="fullscreen u-image u-image-default u-image-1" src="images/Zertifikat_FachkraftfragilesProjektmanagement-001.jpg" alt="" data-image-width="2550" data-image-height="3504" data-animation-name="" data-animation-duration="0" data-animation-direction="">
+                    <img class="u-image u-image-default u-image-1" src="images/Zertifikat_FachkraftfragilesProjektmanagement-001.jpg" alt="" data-image-width="2550" data-image-height="3504" data-animation-name="" data-animation-duration="0" data-animation-direction="">
                   </div>
                 </div>
                 <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">

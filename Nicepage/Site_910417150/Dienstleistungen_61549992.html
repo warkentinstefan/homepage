@@ -7,7 +7,49 @@
     <link rel="stylesheet" href="/nicepage.css" media="screen">
     <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/nicepage.js" defer=""></script>
-<style class="custom-css" type="text/css">#stage {
+<script> 'use strict';
+document.addEventListener('DOMContentLoaded', function () {
+	const stage = document.querySelector('#stage'),
+		toggleButton = document.querySelector('#stage button');
+	stage.addEventListener('click', toggler);
+	function toggler(event) {
+		console.log("toggler", window.matchMedia('(display-mode: fullscreen)')
+			.matches);
+		if (window.matchMedia('(display-mode: fullscreen)')
+			.matches) {
+			console.log('exit');
+			exitFullscreen();
+		} else {
+			console.log('enter');
+			enterFullscreen(stage);
+		}
+	}
+	stage.addEventListener("fullscreenchange", updateButton);
+	function updateButton(event) {
+		console.log("fullscreenchange");
+		toggleButton.classList.toggle('fullscreen');
+		toggleButton.textContent = (toggleButton.textContent == 'Vollbildmodus ⛶') ?
+			'Vollbildmodus verlassen X' : 'Vollbildmodus ⛶';
+	}
+});
+function enterFullscreen(element) {
+	if (element.requestFullscreen) {
+		element.requestFullscreen();
+	} else if (element.webkitRequestFullscreen) {
+		element.webkitRequestFullscreen();
+	} else if (element.msRequestFullscreen) { // for IE11 (remove June 2022)
+		element.msRequestFullscreen();
+	}
+}
+function exitFullscreen() {
+	console.log('exit');
+	if (document.exitFullscreen) {
+		document.exitFullscreen();
+	} else if (document.webkitExitFullscreen) {
+		document.webkitExitFullscreen();
+	}
+}
+</script><style class="custom-css" type="text/css">#stage {
 	position: relative;
 	width: 30em;
 }
@@ -1580,7 +1622,7 @@ kbd {
     padding-right: 10px;
   }
 }</style></div><div class="u-carousel-item u-clearfix u-custom-color-3 u-valign-bottom-xs u-block-e9f4-10" custom-posts-hash="[]" data-section-properties="{&quot;margin&quot;:&quot;none&quot;,&quot;stretch&quot;:true}" data-id="e9f4" data-posts-content="[]" data-style="fix-blank" data-source="Sketch" data-manual-length-set="true"><div class="u-clearfix u-expanded-width u-layout-wrap u-block-e9f4-3"><div class="u-layout">  <div class="u-layout-row"><div class="u-container-style u-layout-cell u-size-30 u-block-e9f4-4"><div class="u-container-layout u-valign-top u-block-e9f4-5">
-<img class="fullscreen u-image u-image-default u-block-e9f4-8" src="np://user.desktop.nicepage.com/Site_910417150/images/Zertifikat_FachkraftfragilesProjektmanagement-001.jpg?rand=18e8" alt="" data-image-width="2550" data-image-height="3504" data-animation-name="" data-animation-duration="0" data-animation-direction="" data-additional-class="fullscreen"></div></div>
+<img class="u-image u-image-default u-block-e9f4-8" src="np://user.desktop.nicepage.com/Site_910417150/images/Zertifikat_FachkraftfragilesProjektmanagement-001.jpg?rand=18e8" alt="" data-image-width="2550" data-image-height="3504" data-animation-name="" data-animation-duration="0" data-animation-direction=""></div></div>
 <div class="u-container-style u-layout-cell u-size-30 u-block-e9f4-6"><div class="u-container-layout u-valign-bottom u-block-e9f4-7">
 <img class="u-image u-image-default u-block-e9f4-9" src="np://user.desktop.nicepage.com/Site_910417150/images/Zertifikat_FachkraftfragilesProjektmanagement-002.jpg?rand=fb4f" alt="" data-image-width="2550" data-image-height="3504"></div></div>  </div></div></div><style data-mode="XL">@media (min-width: 1200px) {
   .u-block-e9f4-10 {
