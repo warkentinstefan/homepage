@@ -7,70 +7,33 @@
     <link rel="stylesheet" href="/nicepage.css" media="screen">
     <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="np://app.desktop.nicepage.com/nicepage.js" defer=""></script>
-<script> 'use strict';
-document.addEventListener('DOMContentLoaded', function () {
-	const stage = document.querySelector('#stage'),
-		toggleButton = document.querySelector('#stage button');
-	stage.addEventListener('click', toggler);
-	function toggler(event) {
-		console.log("toggler", window.matchMedia('(display-mode: fullscreen)')
-			.matches);
-		if (window.matchMedia('(display-mode: fullscreen)')
-			.matches) {
-			console.log('exit');
-			exitFullscreen();
-		} else {
-			console.log('enter');
-			enterFullscreen(stage);
-		}
-	}
-	stage.addEventListener("fullscreenchange", updateButton);
-	function updateButton(event) {
-		console.log("fullscreenchange");
-		toggleButton.classList.toggle('fullscreen');
-		toggleButton.textContent = (toggleButton.textContent == 'Vollbildmodus ⛶') ?
-			'Vollbildmodus verlassen X' : 'Vollbildmodus ⛶';
-	}
-});
-function enterFullscreen(element) {
-	if (element.requestFullscreen) {
-		element.requestFullscreen();
-	} else if (element.webkitRequestFullscreen) {
-		element.webkitRequestFullscreen();
-	} else if (element.msRequestFullscreen) { // for IE11 (remove June 2022)
-		element.msRequestFullscreen();
-	}
-}
-function exitFullscreen() {
-	console.log('exit');
-	if (document.exitFullscreen) {
-		document.exitFullscreen();
-	} else if (document.webkitExitFullscreen) {
-		document.webkitExitFullscreen();
-	}
-}
-</script><style class="custom-css" type="text/css">#stage {
-	position: relative;
-	width: 30em;
-}
-img {
-	width: 100%
-}
-button.fullscreen {
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-kbd {
-	background: #f9f9f9 linear-gradient(to bottom, #eee, #f9f9f9, #eee) repeat scroll 0 0;
-	border: thin solid #aaa;
-	border-radius: 2px;
-	box-shadow: 1px 2px 2px #ddd;
-	font-family: inherit;
-	font-size: 0.9em;
-	padding: 0 0.5em;
-}
-</style><link rel="icon" href="favicon.jpeg"></head>
+<script src="np://app.desktop.nicepage.com/jquery.js"></script><style class="custom-css" type="text/css">$('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+  var src = $(this).attr('src');
+  var modal;
+  function removeModal() {
+    modal.remove();
+    $('body').off('keyup.modal-close');
+  }
+  modal = $('').css({
+    background: 'RGBA(0,0,0,.5) url(' + src + ') no-repeat center',
+    backgroundSize: 'contain',
+    width: '100%',
+    height: '100%',
+    position: 'fixed',
+    zIndex: '10000',
+    top: '0',
+    left: '0',
+    cursor: 'zoom-out'
+  }).click(function() {
+    removeModal();
+  }).appendTo('body');
+  //handling ESC
+  $('body').on('keyup.modal-close', function(e) {
+    if (e.key === 'Escape') {
+      removeModal();
+    }
+  });
+});</style><link rel="icon" href="favicon.jpeg"></head>
 <body class="u-body u-xl-mode" data-style="blank" data-posts="" data-global-section-properties="{&quot;colorings&quot;:{&quot;light&quot;:[&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;],&quot;dark&quot;:[&quot;dark&quot;]}}" data-source="" data-page-sections-style="[]" data-page-coloring-types="{&quot;light&quot;:[&quot;clean&quot;],&quot;colored&quot;:[&quot;clean&quot;],&quot;dark&quot;:[&quot;dark&quot;]}" data-page-category="&quot;Basic&quot;"><section class="u-align-center u-clearfix u-custom-color-2 u-block-820c-1" custom-posts-hash="[T,T,T,T]" data-post-id="1072699166;722413141;2885756796;1653286612" data-section-properties="{&quot;grid-spacing&quot;:&quot;0&quot;,&quot;align&quot;:&quot;left&quot;,&quot;stretch&quot;:true}" data-id="820c" data-posts-content="[{'images':[],'maps':[],'videos':[],'icons':[],'textWidth':1140,'textHeight':638,'id':1,'groupId':1,'headingProp':'h2','textProp':'text'},{'images':[],'maps':[],'videos':[],'icons':[{}],'textWidth':1140,'textHeight':638,'id':2,'groupId':1,'headingProp':'h3','textProp':'text'},{'images':[],'maps':[],'videos':[],'icons':[{}],'textWidth':1140,'textHeight':638,'id':3,'groupId':1,'headingProp':'h3','textProp':'text'},{'images':[],'maps':[],'videos':[],'icons':[{}],'textWidth':1140,'textHeight':638,'id':4,'groupId':1,'headingProp':'h3','textProp':'text'}]" data-style="popular-features-2-with-heading" id="sec-9dbd" data-source="Sketch">
   <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-block-820c-2">
     <h3 class="u-text u-text-default u-block-820c-73">Dienstleistungen</h3>
