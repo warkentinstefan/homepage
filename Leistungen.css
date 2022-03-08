@@ -42,11 +42,11 @@
 }
 
 .u-section-1 .u-btn-1 {
-  background-image: none;
-  border-style: none;
-  text-transform: uppercase;
+  border-style: solid;
   font-size: 0.875rem;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
+  font-weight: 700;
+  text-transform: uppercase;
   margin: auto auto 0;
 }
 
@@ -71,11 +71,11 @@
 }
 
 .u-section-1 .u-btn-2 {
-  background-image: none;
-  border-style: none;
-  text-transform: uppercase;
+  border-style: solid;
   font-size: 0.875rem;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
+  font-weight: 700;
+  text-transform: uppercase;
   margin: auto auto 0;
 }
 
@@ -100,11 +100,11 @@
 }
 
 .u-section-1 .u-btn-3 {
-  background-image: none;
-  border-style: none;
-  text-transform: uppercase;
+  border-style: solid;
   font-size: 0.875rem;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
+  font-weight: 700;
+  text-transform: uppercase;
   margin: auto auto 0;
 }
 
